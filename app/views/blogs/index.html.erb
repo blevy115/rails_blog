@@ -1,0 +1,17 @@
+<h1>Blogs</h1>
+
+<% @blogs.each do |b| %>
+<div>
+<h3 style="display:inline-block">
+  <%= link_to b.title, blog_path(b) %>
+</h3>
+<h5 style="display:inline-block">
+  <%= link_to "Edit", edit_blog_path(b) %>
+</h5>
+<h5 style="display:inline-block">
+  <%= link_to "Delete", blog_path(b), method: :delete %>
+</h5>
+</div>
+<% end %>
+
+<h4><%= link_to "New Blog", new_blog_path %></h4>
